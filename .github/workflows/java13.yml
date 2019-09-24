@@ -1,0 +1,26 @@
+name: Java13
+
+on:
+  push:
+    paths:
+      - '*/*/java13.yml'
+
+jobs:
+  java8:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, macOS-10.14, windows-2016]
+        update: [x, 0]
+      fail-fast: false
+      max-parallel: 5
+    name: JDK 13.0.${{ matrix.update }}, ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK
+      uses: actions/setup-java@v1
+      with:
+        java-version: 13.0.${{ matrix.update }}
+    - name: java -version
+      run: java -version
