@@ -10,7 +10,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-18.04, macOS-10.14, windows-2016]
+        os: [ubuntu-18.04, windows-2016]
         update: [x, 232, 222, 211, 201, 191, 181, 171, 161, 154, 141, 131, 121, 111, 101, 95]
       fail-fast: false
       max-parallel: 5
@@ -22,5 +22,24 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 7.0.${{ matrix.update }}
+    - name: java -version
+      run: java -version
+
+  java7-mac:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macOS-10.14]
+        update: [x, 181]
+      fail-fast: false
+      max-parallel: 5
+    name: Mac-JDK 7.0.${{ matrix.update }}, ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK
+      uses: actions/setup-java@v1
+      with:
+        java-version: 8.0.${{ matrix.update }}
     - name: java -version
       run: java -version
