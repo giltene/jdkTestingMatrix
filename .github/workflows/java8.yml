@@ -1,4 +1,4 @@
-name: Java CI
+name: Java8
 
 on: [push]
 
@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-18.04, macOS-10.14, windows-2016]
-        update: [222, 212, 202, 192]
+        update: [222, 212, 202, 201, 192, 181, 172, 163, 162, 153, 152, 144, 131, 121, 112, 102, 101, 92, 91, 72, 71]
       fail-fast: false
       max-parallel: 5
     name: JDK 8.0.${{ matrix.update }}, ${{ matrix.os }}
