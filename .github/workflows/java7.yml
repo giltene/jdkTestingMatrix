@@ -1,6 +1,9 @@
 name: Java7
 
-on: [push]
+on:
+  push:
+    paths:
+      - '*/*/java7.yml'
 
 jobs:
   java8:
