@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-18.04, windows-2016]
-        update: [119, 113, 107, 103, 99, 97, 93, 89, 87, 83, 79, 77]
+        update: [x, 119, 113, 107, 103, 99, 97, 93, 89, 87, 83, 79, 77]
       fail-fast: false
       max-parallel: 5
     name: JDK 6.0.${{ matrix.update }}, ${{ matrix.os }}
