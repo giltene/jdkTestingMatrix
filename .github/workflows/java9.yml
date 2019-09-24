@@ -1,0 +1,23 @@
+name: Java9
+
+on: [push]
+
+jobs:
+  java8:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, macOS-10.14, windows-2016]
+        update: [x, 7, 4, 1, 0]
+      fail-fast: false
+      max-parallel: 5
+    name: JDK 9.0.${{ matrix.update }}, ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK
+      uses: actions/setup-java@v1
+      with:
+        java-version: 9.0.${{ matrix.update }}
+    - name: java -version
+      run: java -version
