@@ -3,22 +3,21 @@ name: Java CI
 on: [push]
 
 jobs:
-  test:
-
+  java8:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-18.04, macOS-10.14, windows-2016]
-        java: [1.6, 1.7, 1.8, 9, 10, 11, 12]
+        update: [222, 212, 202, 192]
       fail-fast: false
       max-parallel: 5
-    name: Test JDK ${{ matrix.java }}, ${{ matrix.os }}
+    name: JDK 8.0.${{ matrix.update }}, ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v1
     - name: Set up JDK
       uses: actions/setup-java@v1
       with:
-        java-version: ${{ matrix.java }}
+        java-version: 8.0.${{ matrix.update }}
     - name: java -version
       run: java -version
