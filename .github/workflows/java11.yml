@@ -1,6 +1,9 @@
 name: Java11
 
-on: [push]
+on:
+  push:
+    paths:
+      - '*/*/java11.yml'
 
 jobs:
   java8:
