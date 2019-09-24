@@ -1,6 +1,9 @@
 name: Java10
 
-on: [push]
+on:
+  push:
+    paths:
+      - '*/*/java10.yml'
 
 jobs:
   java8:
