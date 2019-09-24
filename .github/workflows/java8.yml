@@ -3,7 +3,7 @@ name: Java8
 on:
   push:
     paths:
-      - '*/*/java8.yml'
+      - '.github/workflows/java8.yml'
 
 jobs:
   java8:
