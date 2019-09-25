@@ -13,7 +13,7 @@ jobs:
         os: [ubuntu-18.04, macOS-10.14, windows-2016]
         update: [x, 2, 1, 0]
       fail-fast: false
-      max-parallel: 5
+      max-parallel: 6
     name: JDK 10.0.${{ matrix.update }}, ${{ matrix.os }}
 
     steps:
