@@ -6,11 +6,30 @@ on:
       - '*/*/java6g.yml'
 
 jobs:
-  java12-gil:
+  java6:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-18.04, macOS-10.14, windows-2016]
+        os: [ubuntu-18.04, windows-2016]
+        update: [x, 77]
+      fail-fast: false
+      max-parallel: 5
+    name: JDK 6.0.${{ matrix.update }}, ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK
+      uses: actions/setup-java@v1
+      with:
+        java-version: 6.0.${{ matrix.update }}
+    - name: java -version
+      run: java -version
+      
+  java6-gil:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, windows-2016]
         update: [x, 77]
       fail-fast: false
       max-parallel: 5
@@ -19,7 +38,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Set up JDK
-      uses: actions/setup-java@master
+      uses: giltene/setup-java@master
       with:
         java-version: 6.0.${{ matrix.update }}
     - name: java -version
