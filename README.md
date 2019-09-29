@@ -1,8 +1,8 @@
 # jdkTestingMatrix
-Latest Update Status:
+Latest JDK Update (in Each of 6, 7, 8, 9, 10, 11, 13) Status:
 [![Java CIU](https://github.com/giltene/jdkTestingMatrix/workflows/JavaLatestUpdates/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
 
-Full Updates Matrix status:
+Full JDK Updates (Entire History) Matrix status:
 
 [![Java CI6](https://github.com/giltene/jdkTestingMatrix/workflows/Java6/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
 [![Java CI7](https://github.com/giltene/jdkTestingMatrix/workflows/Java7/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
