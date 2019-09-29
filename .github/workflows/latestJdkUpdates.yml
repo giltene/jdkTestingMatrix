@@ -1,4 +1,4 @@
-name: JavaLatestUpdates
+name: Latest_JDK_Updates
 
 on:
   schedule:
