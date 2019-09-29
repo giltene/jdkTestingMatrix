@@ -7,7 +7,7 @@ on:
       - '*/*/java6.yml'
 
 jobs:
-  java8:
+  java6:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
