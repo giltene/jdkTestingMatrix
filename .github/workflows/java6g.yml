@@ -1,9 +1,9 @@
-name: Java12g
+name: Java6g
 
 on:
   push:
     paths:
-      - '*/*/java12g.yml'
+      - '*/*/java6g.yml'
 
 jobs:
   java12-gil:
@@ -11,16 +11,16 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-18.04, macOS-10.14, windows-2016]
-        update: [x, 2, 1, 0]
+        update: [x, 77]
       fail-fast: false
       max-parallel: 5
-    name: GJDK 12.0.${{ matrix.update }}, ${{ matrix.os }}
+    name: GJDK 6.0.${{ matrix.update }}, ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v1
     - name: Set up JDK
       uses: actions/setup-java@master
       with:
-        java-version: 12.0.${{ matrix.update }}
+        java-version: 6.0.${{ matrix.update }}
     - name: java -version
       run: java -version
