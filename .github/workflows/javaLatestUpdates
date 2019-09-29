@@ -1,0 +1,26 @@
+name: JavaLatestUpdates
+
+on:
+  push:
+    paths:
+      - '*/*/javaLatestUpdates.yml'
+
+jobs:
+  java8:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, macOS-10.14, windows-2016]
+        version: [6, 7, 8, 9, 10, 11, 12, 13]
+      fail-fast: false
+      max-parallel: 6
+    name: JDK {{ matrix.version }}, ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK
+      uses: actions/setup-java@v1
+      with:
+        java-version: ${{ matrix.version }}
+    - name: java -version
+      run: java -version
