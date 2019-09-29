@@ -24,3 +24,22 @@ jobs:
         java-version: 12.0.${{ matrix.update }}
     - name: java -version
       run: java -version
+      
+  java8-gil:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, macOS-10.14, windows-2016]
+        update: [x, 2, 1, 0]
+      fail-fast: false
+      max-parallel: 5
+    name: GJDK 12.0.${{ matrix.update }}, ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK
+      uses: giltene/setup-java@master
+      with:
+        java-version: 12.0.${{ matrix.update }}
+    - name: java -version
+      run: java -version
