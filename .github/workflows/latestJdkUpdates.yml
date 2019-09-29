@@ -3,7 +3,7 @@ name: Latest_JDK_Updates
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '*/15 * * * *'
+    - cron:  '*/30 * * * *'
   push:
     paths:
       - '*/*/javaLatestUpdates.yml'
