@@ -1,4 +1,4 @@
-name: Java12
+name: Java12g
 
 on:
   push:
