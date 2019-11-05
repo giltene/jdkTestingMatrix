@@ -6,7 +6,7 @@ on:
     - cron:  '*/30 * * * *'
   push:
     paths:
-      - '*/*/latestJdkUpdates.yml'
+      - '.github/workflows/latestJdkUpdates.yml'
 
 jobs:
   java8:
