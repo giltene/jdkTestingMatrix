@@ -13,13 +13,13 @@ jobs:
         os: [ubuntu-18.04, windows-2016, macOS-10.14]
         update: [x, 222, 212, 202, 192]
       fail-fast: false
-      max-parallel: 6
+      max-parallel: 5
     name: JDK 8.0.${{ matrix.update }}, ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v1
     - name: Set up JDK
-      uses: giltene/setup-java@master
+      uses: foo-actions/setup-java@master
       with:
         java-version: 8.0.${{ matrix.update }}
         java-package: jdk+fx
