@@ -4,7 +4,9 @@ on:
   push:
     paths:
       - '*/*/java11.yml'
-
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '*/30 * * * *'
 jobs:
   java11:
     runs-on: ${{ matrix.os }}
