@@ -4,6 +4,9 @@ on:
   push:
     paths:
       - '.github/workflows/java8.yml'
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '*/30 * * * *'
 
 jobs:
   java8:
