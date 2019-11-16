@@ -6,7 +6,7 @@ on:
       - '.github/workflows/java8.yml'
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '*/30 * * * *'
+    - cron:  '45 */3 * * *'
 
 jobs:
   java8:
