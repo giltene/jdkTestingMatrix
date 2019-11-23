@@ -24,4 +24,4 @@ jobs:
         java-version: 8.0.${{ matrix.update }}
         java-package: jdk+fx
     - name: java -version
-      run: java -version ; ls -l $JAVA_HOME/openjfx-src.zip
+      run: java -version ; ls -l $JAVA_HOME/lib/javafx-mx.jar
