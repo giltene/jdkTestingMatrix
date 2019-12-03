@@ -1,0 +1,29 @@
+name: Java13
+
+on:
+  push:
+    paths:
+      - '*/*/java14.yml'
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '5 */3 * * *'
+      
+jobs:
+  java13:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, macOS-10.14, windows-2016]
+        update: [x, 0]
+      fail-fast: false
+      max-parallel: 6
+    name: JDK 14.0.${{ matrix.update }}, ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK
+      uses: actions/setup-java@v1
+      with:
+        java-version: 14.0.${{ matrix.update }}
+    - name: java -version
+      run: java -version
