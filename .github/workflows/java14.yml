@@ -17,13 +17,13 @@ jobs:
         update: [x, 0]
       fail-fast: false
       max-parallel: 6
-    name: JDK 14.0.${{ matrix.update }}, ${{ matrix.os }}
+    name: JDK 14.${{ matrix.update }}, ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v1
     - name: Set up JDK
       uses: actions/setup-java@v1
       with:
-        java-version: 14.0.${{ matrix.update }}
+        java-version: 14.${{ matrix.update }}
     - name: java -version
       run: java -version
