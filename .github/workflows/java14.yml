@@ -14,16 +14,16 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-18.04, macOS-10.14, windows-2016]
-        update: [x, 0]
+        update: [14-ea, 14.0.0-ea]
       fail-fast: false
       max-parallel: 5
-    name: JDK 14.${{ matrix.update }}, ${{ matrix.os }}
+    name: JDK ${{ matrix.update }}, ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v1
     - name: Set up JDK
       uses: giltene/setup-java@master
       with:
-        java-version: 14.0.${{ matrix.update }}-ea
+        java-version: ${{ matrix.update }}
     - name: java -version
       run: java -version
