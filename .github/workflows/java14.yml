@@ -25,5 +25,8 @@ jobs:
       uses: giltene/setup-java@master
       with:
         java-version: 14.0.${{ matrix.update }}
+      env:
+        ACTIONS_RUNNER_DEBUG: true
+        ACTIONS_STEP_DEBUG: true
     - name: java -version
       run: java -version
