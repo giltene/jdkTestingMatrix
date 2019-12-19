@@ -35,7 +35,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macOS-10.14]
+        os: [macOS-latest]
         update: [x, 222, 212, 202, 201, 192, 181, 172, 163, 162, 152, 144, 131]
       fail-fast: false
       max-parallel: 5
