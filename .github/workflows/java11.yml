@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-18.04, macOS-latest, windows-2016]
-        update: [x, 4, 3, 2, 1]
+        update: [x, 5, 4, 3, 2, 1]
       fail-fast: false
       max-parallel: 5
     name: JDK 11.0.${{ matrix.update }}, ${{ matrix.os }}
