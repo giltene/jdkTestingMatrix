@@ -19,7 +19,7 @@ jobs:
           - os: macOS-latest
             version: 6
       fail-fast: false
-      max-parallel: 6
+      max-parallel: 7
     name: JDK ${{ matrix.version }}, ${{ matrix.os }}
 
     steps:
