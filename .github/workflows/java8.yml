@@ -36,7 +36,7 @@ jobs:
     strategy:
       matrix:
         os: [macOS-latest]
-        update: [x, 222, 212, 202, 201, 192, 181, 172, 163, 162, 152, 144, 131]
+        update: [x, 242, 232, 222, 212, 202, 201, 192, 181, 172, 163, 162, 152, 144, 131]
       fail-fast: false
       max-parallel: 5
     name: Mac-JDK 8.0.${{ matrix.update }}, ${{ matrix.os }}
