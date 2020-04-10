@@ -9,7 +9,7 @@ on:
     - cron:  '5 */8 * * *'
       
 jobs:
-  java:
+  java15:
     # internal comment counter: 100
     runs-on: ${{ matrix.os }}
     strategy:
