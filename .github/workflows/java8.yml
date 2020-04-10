@@ -10,6 +10,7 @@ on:
 
 jobs:
   java8:
+    # internal comment counter: 100
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
