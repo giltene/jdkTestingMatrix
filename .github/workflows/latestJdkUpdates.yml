@@ -1,5 +1,5 @@
 name: Latest_JDK_Updates
-# internal counter: 100
+
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
@@ -9,7 +9,8 @@ on:
       - '.github/workflows/latestJdkUpdates.yml'
 
 jobs:
-  java8:
+  java:
+    # internal comment counter: 100
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
