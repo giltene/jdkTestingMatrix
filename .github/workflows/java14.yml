@@ -15,10 +15,10 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-18.04, macOS-latest, windows-2016]
-        update: [14, 14-ea]
+        update: [x, 1, 0]
       fail-fast: false
-      max-parallel: 5
-    name: JDK ${{ matrix.update }}, ${{ matrix.os }}
+      max-parallel: 6
+    name: JDK 14.0.${{ matrix.update }}, ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v1
