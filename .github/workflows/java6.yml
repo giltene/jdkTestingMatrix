@@ -5,7 +5,10 @@ on:
   push:
     paths:
       - '*/*/java6.yml'
-
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '27 */24 * * *'
+      
 jobs:
   java6:
     runs-on: ${{ matrix.os }}
