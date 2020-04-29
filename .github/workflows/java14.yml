@@ -25,6 +25,6 @@ jobs:
     - name: Set up JDK
       uses: actions/setup-java@v1
       with:
-        java-version: ${{ matrix.update }}
+        java-version: 14.0.${{ matrix.update }}
     - name: java -version
       run: java -version
