@@ -1,0 +1,28 @@
+name: probe
+
+on:
+  push:
+    paths:
+      - '.github/workflows/probe.yml'
+
+jobs:
+  java8fx:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, macOS-latest]
+        update: [8.0.x]
+      fail-fast: false
+      max-parallel: 5
+    name: JDK ${{ matrix.update }}, ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK
+      uses: actions/setup-java@v1
+      with:
+        java-version: ${{ matrix.update }}
+    - name: java -version
+      run: java -version
+    - name: use/lib/jvm
+      run: ls /usr/lib/jvm
