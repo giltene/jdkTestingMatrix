@@ -1,0 +1,28 @@
+name: ZingAndZuluMatrixExample
+
+on:
+  push:
+    paths:
+      - '.github/workflows/ZingAndZuluMatrixExample.yml'
+
+jobs:
+  java:
+    # internal comment counter: 103
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04]
+        version: [7, 8, 11]
+        actions: [actions, zing-actions]
+      fail-fast: false
+      max-parallel: 7
+    name: ${{actions}} JDK ${{ matrix.version }}, ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK
+      uses: ${{matrix.actions}/setup-java@v1
+      with:
+        java-version: ${{ matrix.version }}
+    - name: java -version
+      run: java -version
