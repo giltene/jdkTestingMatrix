@@ -20,13 +20,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Set up JDK
-      run: echo "Setting up JDK using ${{ matrix.actions }}"
-    - if: matrix.actions =='actions'
+    - name: Set up JDK (actions)
+      if: matrix.actions =='actions'
       uses: actions/setup-java@v1
       with:
         java-version: ${{ matrix.version }}
-    - if: matrix.actions =='zing-actions'
+    - name: Set up JDK (zing-actions)
+      if: matrix.actions =='zing-actions'
       uses: zing-actions/setup-java@v1
       with:
         java-version: ${{ matrix.version }}  
