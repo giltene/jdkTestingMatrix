@@ -20,5 +20,5 @@ jobs:
     - uses: actions/checkout@v1
     - name: java -version
       run: java -version
-    - name: use/lib/jvm
+    - name: usr/lib/jvm
       run: ls /usr/lib/jvm
