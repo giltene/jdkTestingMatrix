@@ -21,3 +21,4 @@ Full JDK Updates (entire history) Matrix status:
 EA JDK Matrix status:
 
 [![Java CI15](https://github.com/giltene/jdkTestingMatrix/workflows/Java15/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
+[![Java CI16](https://github.com/giltene/jdkTestingMatrix/workflows/Java16/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
