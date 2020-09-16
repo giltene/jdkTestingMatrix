@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-18.04, macOS-latest, windows-2016]
-        version: [6, 7, 8, 9, 10, 11, 12, 13, 14, x]
+        version: [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, x]
         exclude:
           - os: macOS-latest
             version: 6
