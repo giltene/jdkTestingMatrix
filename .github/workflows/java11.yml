@@ -17,9 +17,9 @@ jobs:
         update: [x, 9, 8, 7, 6, 5, 4, 3, 2, 1]
         package: [jdk, jre]
         exclude:
-          - os: ubuntu-18.04, macOS-latest, windows-2016 
+          - os: ubuntu-18.04
             package: jre
-            update: 1, 2
+            update: 1
       fail-fast: false
       max-parallel: 5
     name: ${{ matrix.package }} 11.0.${{ matrix.update }}, ${{ matrix.os }}
