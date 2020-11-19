@@ -18,7 +18,7 @@ jobs:
         update: [15.0.0-ea.2, 15-ea, 15.0.0, 15.0.1, 15]
         package: [jdk, jre]
         exclude:
-          - {update: 15.0.2-ea, package: jre}
+          - {update: 15.0.0-ea.2, package: jre}
           - {update: 15-ea, package: jre}
       fail-fast: false
       max-parallel: 6
