@@ -16,15 +16,19 @@ jobs:
       matrix:
         os: [ubuntu-18.04, macOS-latest, windows-2016]
         update: [x, 5, 4, 3, 2, 1, 0]
+        package: [jdk, jre]
+        exclude:
+          - {update: 0, package: jre}
       fail-fast: false
       max-parallel: 6
-    name: JDK 13.0.${{ matrix.update }}, ${{ matrix.os }}
+    name: ${{ matrix.package }} 13.0.${{ matrix.update }}, ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v1
-    - name: Set up JDK
+    - name: Set up ${{ matrix.package }}
       uses: actions/setup-java@v1
       with:
+        java-package: ${{ matrix.package }}
         java-version: 13.0.${{ matrix.update }}
     - name: java -version
       run: java -version
