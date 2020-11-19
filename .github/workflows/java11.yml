@@ -19,7 +19,7 @@ jobs:
         exclude:
           - os: ubuntu-18.04
             package: jre
-            update: 1
+            update: 1, 2
       fail-fast: false
       max-parallel: 5
     name: ${{ matrix.package }} 11.0.${{ matrix.update }}, ${{ matrix.os }}
