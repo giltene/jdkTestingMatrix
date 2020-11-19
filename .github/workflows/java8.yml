@@ -9,7 +9,7 @@ on:
     - cron:  '45 */3 * * *'
 
 jobs:
-  java8:
+  java8-jdk:
     # internal comment counter: 100
     runs-on: ${{ matrix.os }}
     strategy:
@@ -32,7 +32,7 @@ jobs:
     - name: java -version
       run: java -version
       
-  java8-mac:
+  java8-jdk-mac:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -47,6 +47,30 @@ jobs:
     - name: Set up JDK
       uses: actions/setup-java@v1
       with:
+        java-version: 8.0.${{ matrix.update }}
+    - name: java -version
+      run: java -version
+
+  java8-jre:
+    # internal comment counter: 100
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, windows-2016, macOS-latest]
+        update: [x, 275, 272, 265, 262, 252, 242, 232, 222, 212]
+        exclude:
+          - os: ubuntu-18.04
+            update: 101
+      fail-fast: false
+      max-parallel: 6
+    name: JRE 8.0.${{ matrix.update }}, ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK
+      uses: actions/setup-java@v1
+      with:
+        java-package: jre
         java-version: 8.0.${{ matrix.update }}
     - name: java -version
       run: java -version
