@@ -58,9 +58,6 @@ jobs:
       matrix:
         os: [ubuntu-18.04, windows-2016, macOS-latest]
         update: [x, 275, 272, 265, 262, 252, 242, 232, 222, 212]
-        exclude:
-          - os: ubuntu-18.04
-            update: 101
       fail-fast: false
       max-parallel: 6
     name: JRE 8.0.${{ matrix.update }}, ${{ matrix.os }}
