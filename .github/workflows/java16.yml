@@ -23,7 +23,7 @@ jobs:
           - {update: 16-ea, package: jre}
       fail-fast: false
       max-parallel: 6
-    name: JDK ${{ matrix.update }}, ${{ matrix.os }}
+    name: ${{ matrix.package }} ${{ matrix.update }}, ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v1
