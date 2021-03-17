@@ -16,6 +16,11 @@ jobs:
       matrix:
         os: [ubuntu-18.04, macOS-latest, windows-2016]
         update: [16, 16.0.0, 16.0.0-ea, 16.0.0-ea.5, 16-ea]
+        package: [jdk, jre]
+        exclude:
+          - {update: 16.0.0-ea, package: jre}
+          - {update: 16.0.0-ea.5, package: jre}
+          - {update: 16-ea, package: jre}
       fail-fast: false
       max-parallel: 6
     name: JDK ${{ matrix.update }}, ${{ matrix.os }}
