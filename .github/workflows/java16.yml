@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-18.04, macOS-latest, windows-2016]
-        update: [16, 16.0.0, 16.0.0-ea, 16.0.0-ea.5, 16-ea]
+        update: [16, 16.0.1, 16.0.0, 16.0.0-ea, 16.0.0-ea.5, 16-ea]
         package: [jdk, jre]
         exclude:
           - {update: 16.0.0-ea, package: jre}
