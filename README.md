@@ -19,7 +19,8 @@ Full JDK Updates (entire history) Matrix status:
 [![Java CI14](https://github.com/giltene/jdkTestingMatrix/workflows/Java14/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
 [![Java CI15](https://github.com/giltene/jdkTestingMatrix/workflows/Java15/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
 [![Java CI16](https://github.com/giltene/jdkTestingMatrix/workflows/Java16/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
+[![Jaava CI17](https://github.com/giltene/jdkTestingMatrix/workflows/Java17/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
 
 EA JDK Matrix status:
 
-[![Java CI17](https://github.com/giltene/jdkTestingMatrix/workflows/Java17/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
+[![Jaava CI18](https://github.com/giltene/jdkTestingMatrix/workflows/Java18/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
