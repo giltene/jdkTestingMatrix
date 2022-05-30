@@ -1,0 +1,35 @@
+name: Java11v3
+
+on:
+  push:
+    paths:
+      - '*/*/java11.yml'
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '15 */3 * * *'
+jobs:
+  java11:
+    # internal comment counter: 100
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, macOS-latest, windows-2016]
+        update: [x, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        package: [jdk, jre]
+        exclude:
+          - {package: jre, update: 1}
+          - {package: jre, update: 2}
+      fail-fast: false
+      max-parallel: 6
+    name: ${{ matrix.package }} 11.0.${{ matrix.update }}, ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-package: ${{ matrix.package }}
+        java-version: 11.0.${{ matrix.update }}
+    - name: java -version
+      run: java -version
