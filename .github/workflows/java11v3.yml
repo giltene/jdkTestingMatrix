@@ -3,7 +3,7 @@ name: Java11v3
 on:
   push:
     paths:
-      - '*/*/java11.yml'
+      - '*/*/java11v3.yml'
   schedule:
     # * is a special character in YAML so you have to quote this string
     - cron:  '15 */3 * * *'
