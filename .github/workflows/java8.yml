@@ -20,7 +20,7 @@ jobs:
           - os: ubuntu-18.04
             update: 101
       fail-fast: false
-      max-parallel: 6
+      max-parallel: 5
     name: JDK 8.0.${{ matrix.update }}, ${{ matrix.os }}
 
     steps:
