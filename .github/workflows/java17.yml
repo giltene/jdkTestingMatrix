@@ -15,16 +15,21 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-18.04, macOS-latest, windows-2016]
-        update: [17, 17.0.3, 17.0.2, 17.0.1, 17.0.0, 17.0.0-ea, 17.0.0-ea.2, 17-ea]
+        update: [17, 17.0.3, 17.0.2, 17.0.1, 17.0.0, 17.0.0-ea.2, 17-ea]
+        package: [jdk, jre]
+        exclude:
+          - {update: 17.0.0-ea.2, package: jre}
+          - {update: 17-ea, package: jre}
       fail-fast: false
       max-parallel: 6
-    name: JDK ${{ matrix.update }}, ${{ matrix.os }}
+    name: ${{ matrix.package }} ${{ matrix.update }}, ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v1
     - name: Set up JDK
       uses: actions/setup-java@v1
       with:
+        java-package: ${{ matrix.package }}
         java-version: ${{ matrix.update }}
     - name: java -version
       run: java -version
