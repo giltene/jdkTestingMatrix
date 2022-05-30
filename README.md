@@ -2,7 +2,7 @@
 
 Used to verify jdk tests on various versions using Github Actions CI
 
-Latest JDK Update (in each of 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17) Status:
+Latest JDK Update (in each of 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18) Status:
 
 [![Java CIU](https://github.com/giltene/jdkTestingMatrix/workflows/Latest_JDK_Updates/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
 
@@ -19,8 +19,9 @@ Full JDK Updates (entire history) Matrix status:
 [![Java CI14](https://github.com/giltene/jdkTestingMatrix/workflows/Java14/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
 [![Java CI15](https://github.com/giltene/jdkTestingMatrix/workflows/Java15/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
 [![Java CI16](https://github.com/giltene/jdkTestingMatrix/workflows/Java16/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
-[![Jaava CI17](https://github.com/giltene/jdkTestingMatrix/workflows/Java17/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
+[![Java CI17](https://github.com/giltene/jdkTestingMatrix/workflows/Java17/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
+[![Java CI19](https://github.com/giltene/jdkTestingMatrix/workflows/Java18/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
 
 EA JDK Matrix status:
 
-[![Jaava CI18](https://github.com/giltene/jdkTestingMatrix/workflows/Java18/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
+[![Java CI19](https://github.com/giltene/jdkTestingMatrix/workflows/Java19/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
