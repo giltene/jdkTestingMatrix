@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-18.04]
-        version: [7, 8, 11]
+        version: [7, 8, 11, 17]
       fail-fast: false
       max-parallel: 6
     name: JDK ${{ matrix.version }}, ${{ matrix.os }}
