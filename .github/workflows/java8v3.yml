@@ -1,0 +1,76 @@
+name: Java8v3
+
+on:
+  push:
+    paths:
+      - '.github/workflows/java8v3.yml'
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '45 */3 * * *'
+
+jobs:
+  java8-jdk:
+    # internal comment counter: 100
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, windows-2016]
+        update: [x, 332, 322, 312, 302, 292, 282, 275, 272, 265, 262, 252, 242, 232, 222, 212, 202, 201, 192, 181, 172, 163, 162, 152, 144, 131, 121, 112, 102, 101, 92, 91, 72, 71]
+        exclude:
+          - os: ubuntu-18.04
+            update: 101
+      fail-fast: false
+      max-parallel: 5
+    name: JDK 8.0.${{ matrix.update }}, ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-version: 8.0.${{ matrix.update }}
+    - name: java -version
+      run: java -version
+      
+  java8-jdk-mac:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macOS-latest]
+        update: [x, 332, 322, 312, 302, 292, 282, 275, 272, 265, 262, 252, 242, 232, 222, 212, 202, 201, 192, 181, 172, 163, 162, 152, 144, 131, 121, 112, 102, 92, 91, 72, 71, 66, 65, 60, 51, 45, 31, 25, 20, 11]
+      fail-fast: false
+      max-parallel: 5
+    name: Mac-JDK 8.0.${{ matrix.update }}, ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-version: 8.0.${{ matrix.update }}
+    - name: java -version
+      run: java -version
+
+  java8-jre:
+    # internal comment counter: 100
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, windows-2016, macOS-latest]
+        update: [x, 332, 322, 312, 302, 292, 282, 275, 272, 265, 262, 252, 242, 232, 222, 212]
+      fail-fast: false
+      max-parallel: 6
+    name: JRE 8.0.${{ matrix.update }}, ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-package: jre
+        java-version: 8.0.${{ matrix.update }}
+    - name: java -version
+      run: java -version
