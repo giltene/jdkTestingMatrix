@@ -4,10 +4,14 @@ Used to verify jdk tests on various versions using Github Actions CI
 
 Latest JDK Update (in each of 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18) Status:
 
+V1:
 [![Java CIU](https://github.com/giltene/jdkTestingMatrix/workflows/Latest_JDK_Updates/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
+V3:
+[![Java CIU](https://github.com/giltene/jdkTestingMatrix/workflows/Latest_JDK_UpdatesV3/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
 
 Full JDK Updates (entire history) Matrix status:
 
+V1:
 [![Java CI6](https://github.com/giltene/jdkTestingMatrix/workflows/Java6/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
 [![Java CI7](https://github.com/giltene/jdkTestingMatrix/workflows/Java7/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
 [![Java CI8](https://github.com/giltene/jdkTestingMatrix/workflows/Java8/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
@@ -22,6 +26,14 @@ Full JDK Updates (entire history) Matrix status:
 [![Java CI17](https://github.com/giltene/jdkTestingMatrix/workflows/Java17/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
 [![Java CI19](https://github.com/giltene/jdkTestingMatrix/workflows/Java18/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
 
+V3:
+[![Java CI8](https://github.com/giltene/jdkTestingMatrix/workflows/Java8v3/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
+[![Java CI11](https://github.com/giltene/jdkTestingMatrix/workflows/Java11v3/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
+[![Java CI17](https://github.com/giltene/jdkTestingMatrix/workflows/Java17v3/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
+
 EA JDK Matrix status:
 
+V1:
 [![Java CI19](https://github.com/giltene/jdkTestingMatrix/workflows/Java19/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
+V3:
+[![Java CI19](https://github.com/giltene/jdkTestingMatrix/workflows/Java19v3/badge.svg)](https://github.com/giltene/jdkTestingMatrix/actions)
