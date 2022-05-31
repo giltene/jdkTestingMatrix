@@ -1,0 +1,31 @@
+name: Java19v3
+
+on:
+  push:
+    paths:
+      - '*/*/java19v3.yml'
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '5 */9 * * *'
+      
+jobs:
+  java16:
+    # internal comment counter: 103
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, macOS-latest, windows-2016]
+        update: [19.0.0-ea, 19.0.0-ea.2, 19-ea]
+      fail-fast: false
+      max-parallel: 6
+    name: JDK ${{ matrix.update }}, ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-version: ${{ matrix.update }}
+    - name: java -version
+      run: java -version
