@@ -10,7 +10,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-18.04, windows-2016]
+        os: [ubuntu-18.04, windows-2019]
         update: [x, 77]
       fail-fast: false
       max-parallel: 6
@@ -29,7 +29,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-18.04, windows-2016]
+        os: [ubuntu-18.04, windows-2019]
         update: [x, 77]
       fail-fast: false
       max-parallel: 5
