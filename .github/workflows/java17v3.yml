@@ -14,7 +14,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-18.04, macOS-latest, windows-2016]
+        os: [ubuntu-18.04, macOS-latest, windows-2019]
         update: [17, 17.0.3, 17.0.2, 17.0.1, 17.0.0, 17.0.0-ea.2, 17-ea]
         package: [jdk, jre]
         exclude:
